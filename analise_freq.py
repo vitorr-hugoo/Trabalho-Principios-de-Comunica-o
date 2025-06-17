@@ -2,7 +2,7 @@ import numpy as np
 import librosa
 import librosa.display
 import matplotlib.pyplot as plt
-import os # Para verificar a existência do arquivo
+import os 
 
 def analisar_audio_fft(caminho_arquivo_audio):
     """
@@ -30,8 +30,7 @@ def analisar_audio_fft(caminho_arquivo_audio):
         print("Certifique-se de que o arquivo é um formato de áudio suportado (.wav, .mp3, etc.)")
         return
 
-    # 3. Calcular a Transformada Rápida de Fourier (FFT)
-    # A FFT de um sinal real é simétrica, então pegamos apenas a primeira metade.
+   
     # np.fft.fft retorna um array de números complexos.
     # np.abs calcula a magnitude (amplitude) desses números complexos.
     print("Calculando a FFT...")
@@ -39,8 +38,7 @@ def analisar_audio_fft(caminho_arquivo_audio):
     yf = np.fft.fft(y)
     xf = np.fft.fftfreq(N, 1 / sr) # Frequências correspondentes às amostras da FFT
 
-    # Como o sinal de áudio é real, o espectro da FFT é simétrico.
-    # Nos interessam apenas as frequências positivas (primeira metade do espectro).
+   
     # O +1 é para incluir a frequência Nyquist se N for par
     primeira_metade_indices = np.arange(1, N // 2 + 1)
     yf_primeira_metade = yf[primeira_metade_indices]
@@ -69,15 +67,9 @@ def analisar_audio_fft(caminho_arquivo_audio):
 
     print("Análise de FFT concluída.")
 
-# --- Como usar o código ---
-if __name__ == "__main__":
-    # COLOQUE O CAMINHO PARA A SUA MÚSICA AQUI
-    # Exemplo: Se sua música estiver na mesma pasta que o script, use apenas o nome do arquivo.
-    # Se estiver em outra pasta, use o caminho completo (e.g., 'C:/Musicas/minha_musica.mp3' no Windows, ou '/home/usuario/musicas/minha_musica.wav' no Linux/macOS)
-    caminho_da_sua_musica = 'Dancing Alone.mp3' # <--- ALtere este caminho para o seu arquivo de áudio!
 
-    # Para testar, você pode baixar um pequeno arquivo .wav ou .mp3 de exemplo.
-    # Certifique-se de que o arquivo de áudio esteja no mesmo diretório do seu script Python,
-    # ou forneça o caminho completo para ele.
+if __name__ == "__main__":
+    
+    caminho_da_sua_musica = 'Dancing Alone.mp3' 
 
     analisar_audio_fft(caminho_da_sua_musica)
