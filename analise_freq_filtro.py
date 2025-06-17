@@ -4,7 +4,7 @@ import librosa.display
 import matplotlib.pyplot as plt
 import os
 from scipy.signal import butter, lfilter
-import soundfile as sf # <-- Adicione esta importação!
+import soundfile as sf 
 
 def butter_bandstop(lowcut, highcut, fs, order=5):
     """
@@ -72,8 +72,7 @@ def analisar_e_filtrar_audio(caminho_arquivo_audio, nome_arquivo_saida='audio_in
 
     # --- 2. Aplicação do Filtro para Atenuar Voz ---
     print("Aplicando filtro para atenuar frequências vocais...")
-    # Frequências típicas para a voz humana (ajuste se necessário!)
-    # Estas são apenas estimativas e podem variar muito.
+    
     lowcut_vocal = 300  # Hz (frequência de corte inferior para a banda de rejeição)
     highcut_vocal = 5000 # Hz (frequência de corte superior para a banda de rejeição)
     filter_order = 8 # Ordem do filtro (quanto maior, mais "íngreme" o corte, mas mais artefatos)
@@ -122,10 +121,10 @@ def analisar_e_filtrar_audio(caminho_arquivo_audio, nome_arquivo_saida='audio_in
 
     print("Análise e filtragem concluídas.")
 
-# --- Como usar o código ---
+
 if __name__ == "__main__":
-    # COLOQUE O CAMINHO PARA A SUA MÚSICA AQUI
-    musica = 'Dancing Alone.wav' # <--- ALtere este caminho!
+    
+    musica = 'Dancing Alone.wav' 
     # Nome do arquivo de saída para o instrumental
     nome_do_arquivo_instrumental = 'exemplo_instrumental.wav'
 
