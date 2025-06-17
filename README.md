@@ -1,1 +1,2 @@
 # Trabalho-Principios-de-Comunica-o
+Este repositório contém um script Python que demonstra a aplicação da Transformada Rápida de Fourier (FFT) para analisar e processar sinais de áudio. O principal objetivo é ilustrar como um filtro digital pode ser utilizado para tentar atenuar a faixa de frequência da voz humana em uma gravação, com o intuito de isolar o instrumental. O código permite carregar um arquivo de áudio, aplicar um filtro de rejeição de banda (Butterworth) e salvar o resultado em um novo arquivo.
